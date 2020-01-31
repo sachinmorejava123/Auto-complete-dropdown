@@ -1,0 +1,102 @@
+@import "../../../../assets/styles/variables";
+
+/* SEARCH SECTION */
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 3rem;
+  background-color: $task-component-background-color;
+
+  .space {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  .form-section {
+    display: flex;
+
+    .search-box {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      i {
+        color: $search-icon-color;
+      }
+
+      input {
+        border: 0;
+        background-color: $search-input-box-background-color;
+        width: 10rem;
+        height: 2rem;
+        margin-left: 1rem;
+      }
+    }
+
+    .selection-dropdown {
+      background-color: $task-component-background-color;
+      color: $select-property-color;
+      height: 2rem;
+      border: 1px solid $dropdown-border-color;
+      border-radius: 0.2rem;
+
+      &:focus,
+      &:active {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .selection-no-border {
+      background-color: $task-component-background-color;
+      height: 2rem;
+      border: none;
+    }
+
+    .filter-button {
+      &:focus,
+      &:active {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .new-task-section {
+    height: 100%;
+    text-align: center;
+    span {
+      color: $select-property-color;
+    }
+
+  }
+  
+  .new-task-section {
+    display: flex;
+    flex: content;
+    align-items: center;
+    span {
+      color: $select-property-color;
+    }
+
+    .create-new-task-icon {
+      color: $select-property-color;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.option-color {
+  color: $select-property-color;
+}
+
+label {
+  font-size: 12px;
+}

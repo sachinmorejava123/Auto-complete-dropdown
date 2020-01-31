@@ -1,0 +1,96 @@
+<!-- SEARCH SECTION -->
+<section class="section">
+
+  <!-- SELECTION DROPDOWNS LIKE VIEW, TYPE-->
+  <form
+    class="form-section"
+    [formGroup]="taskFilterForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="form-row align-items-center">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input
+          type="text"
+          formControlName="searchTerm"
+          placeholder="Search tasks"
+          class="form-control"
+        />
+      </div>
+
+      <span class="space"></span>
+
+      <div>
+        <input
+          type="text"
+          class="form-control selection-no-border"
+          formControlName="provider"
+          [ngbTypeahead]="searchProvider"
+          [resultFormatter]="providerFormatter"
+          [inputFormatter]="providerFormatter"
+          placeholder="Search provider"
+        />
+      </div>
+
+      <span class="space"></span>
+
+      <div>
+        <input
+          type="text"
+          formControlName="facility"
+          class="form-control selection-no-border"
+          [ngbTypeahead]="searchFacilities"
+          [resultFormatter]="facilityFormatter"
+          [inputFormatter]="facilityFormatter"
+          placeholder="Search facility"
+        />
+      </div>
+
+      <span class="space"></span>
+
+      <div>
+         Status:
+        <select class="selection-dropdown" formControlName="taskStatus">
+          <option
+            *ngFor="let status of config.tasklistStatuses"
+            [value]="status.tasklist_status_desc"
+          >
+            {{ status.tasklist_status_desc }}
+          </option>
+        </select>
+      </div>
+
+      <span class="space"></span>
+
+      <div>
+         Type:
+        <select class="selection-dropdown" formControlName="taskType">
+          <option
+            *ngFor="let type of config.tasklistTypes"
+            [value]="type.tasklist_type_desc"
+          >
+          <div>{{ type.tasklist_type_desc }}</div>
+          
+          </option>
+        </select>
+      </div>
+      <span class="space"></span>
+      <div>
+        <button type="submit" class="btn btn-primary btn-sm filter-button">
+          Filter
+        </button>
+      </div>
+      <span class="space"></span>
+    </div>
+  </form>
+
+  <span class="space"></span>
+
+  <div class="new-task-section">
+    <span>Create New Task</span>
+    <span class="space"></span>
+    <span>
+      <i class="fas fa-plus-circle create-new-task-icon"></i>
+    </span>
+  </div>
+</section>
